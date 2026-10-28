@@ -11,7 +11,7 @@
 <meta name="author" content="Md Nawshad Chowdhury">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,25 +28,27 @@
 </script>
 <style>
 :root {
-  --bg: #f5f7fa;
+  --navy: #0a2540;
+  --navy-2: #12365c;
+  --bg: #f3f6fa;
   --surface: #ffffff;
-  --ink: #16202b;
-  --muted: #566475;
-  --rule: #d6dde6;
-  --accent: #1d4ed8;
-  --accent-ink: #ffffff;
-  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ink: #12202f;
+  --muted: #53647a;
+  --rule: #d9e1ea;
+  --accent: #0f766e;
+  --mint: #5eead4;
+  --ok: #22c55e;
+  --display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f1620;
-    --surface: #17212d;
-    --ink: #e8edf3;
-    --muted: #9aa8b8;
-    --rule: #2a3745;
-    --accent: #7aa2ff;
-    --accent-ink: #0f1620;
+  :root {
+    --bg: #0b1420;
+    --surface: #121e2d;
+    --ink: #e6edf5;
+    --muted: #9db0c4;
+    --rule: #22344a;
+    --accent: #5eead4;
   }
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -56,84 +58,111 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--body);
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1.1875rem;
+  line-height: 1.7;
 }
 a { color: var(--accent); text-underline-offset: 3px; }
-a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-.wrap { max-width: 52rem; margin: 0 auto; padding: 0 1.25rem; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 66rem; margin: 0 auto; padding: 0 1.5rem; }
 
-header.hero { padding: 4.5rem 0 3rem; border-bottom: 1px solid var(--rule); }
+/* Hero */
+.hero {
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  color: #eef4fb;
+  padding-bottom: 5rem;
+}
+.nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1.5rem 0; }
+.mark { font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+.nav ul { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.nav ul a { color: #c9d8ea; text-decoration: none; font-weight: 500; }
+.nav ul a:hover { color: #fff; }
+.hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3.5rem; align-items: center; padding-top: 3.5rem; }
 h1 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(2.4rem, 7vw, 4.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.75rem;
+  font-size: clamp(2.7rem, 7vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem;
+  color: #fff;
 }
-.role { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.5rem; }
-.lede { font-size: 1.15rem; max-width: 40rem; margin: 0 0 2rem; }
-.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.pitch { font-size: 1.45rem; line-height: 1.5; color: #d6e3f2; margin: 0 0 2.25rem; max-width: 34rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 .btn {
   display: inline-block;
-  padding: 0.7rem 1.25rem;
-  border-radius: 6px;
-  border: 1.5px solid var(--accent);
+  padding: 0.85rem 1.6rem;
+  border-radius: 8px;
+  border: 2px solid var(--mint);
   font-weight: 600;
+  font-size: 1.05rem;
   text-decoration: none;
-  color: var(--accent);
+  color: var(--mint);
 }
-.btn.primary { background: var(--accent); color: var(--accent-ink); }
-.btn:hover { filter: brightness(1.08); }
+.btn.primary { background: var(--mint); color: var(--navy); }
+.btn:hover { filter: brightness(1.1); }
 
-section { padding: 3rem 0; border-bottom: 1px solid var(--rule); }
-section:last-of-type { border-bottom: 0; }
-h2 {
-  font-family: var(--display);
-  font-size: 1.75rem;
-  letter-spacing: -0.01em;
-  margin: 0 0 1.5rem;
-}
-h3 { font-family: var(--display); font-size: 1.2rem; margin: 0 0 0.15rem; }
-p { margin: 0 0 1rem; }
-ul { margin: 0.5rem 0 1rem; padding-left: 1.2rem; }
-li { margin-bottom: 0.4rem; }
+/* Status board */
+.board { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 1.5rem 1.6rem; backdrop-filter: blur(4px); }
+.board-head { display: flex; align-items: center; gap: 0.6rem; font-family: var(--display); font-weight: 600; font-size: 1.05rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.18); margin: 0 0 0.25rem; }
+.dot { width: 11px; height: 11px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(34,197,94,.25); flex: none; }
+.board dl { margin: 0; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+.row:last-of-type { border-bottom: 0; }
+.row dt { color: #b9cbe0; font-size: 1.02rem; }
+.row dd { margin: 0; font-family: var(--display); font-weight: 600; color: #fff; text-align: right; }
+.board-foot { margin: 0.5rem 0 0; font-size: 0.98rem; color: #b9cbe0; }
+
+/* Sections */
+section { padding: 4.5rem 0; }
+section + section { border-top: 1px solid var(--rule); }
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 1.75rem; }
+h3 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; margin: 0 0 0.25rem; line-height: 1.3; }
+p { margin: 0 0 1.1rem; }
+ul { margin: 0.5rem 0 1.1rem; padding-left: 1.3rem; }
+li { margin-bottom: 0.5rem; }
 .muted { color: var(--muted); }
+.about { max-width: 46rem; }
+.about .big { font-size: 1.5rem; line-height: 1.5; font-weight: 500; }
 
-.job { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0 2rem; padding-bottom: 2.25rem; position: relative; }
-.job + .job { padding-top: 0; }
-.when { color: var(--muted); font-size: 0.95rem; padding-top: 0.2rem; }
-.what { border-left: 2px solid var(--rule); padding-left: 1.5rem; position: relative; }
-.what::before {
-  content: "";
-  position: absolute;
-  left: -7px; top: 0.55rem;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--bg);
-}
-.what h4 { font-size: 1rem; margin: 1.25rem 0 0.25rem; }
-.roles { margin: 0.25rem 0 0.75rem; color: var(--muted); }
+/* Skills */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 10px; padding: 1.5rem; }
+.card h3 { margin-bottom: 0.6rem; }
+.card p { margin: 0; color: var(--muted); font-size: 1.08rem; }
 
-.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
-.skill-group { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 1.1rem 1.25rem; }
-.skill-group h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
-.skill-group ul { list-style: none; padding: 0; margin: 0; }
-.skill-group li { margin-bottom: 0.25rem; }
+/* Experience */
+.job { display: grid; grid-template-columns: 11rem 1fr; gap: 0 2.5rem; padding-bottom: 2.75rem; }
+.job:last-child { padding-bottom: 0; }
+.when { color: var(--muted); font-weight: 600; padding-top: 0.3rem; }
+.what { border-left: 2px solid var(--rule); padding-left: 2rem; position: relative; }
+.what::before { content: ""; position: absolute; left: -8px; top: 0.6rem; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.roles { margin: 0 0 0.9rem; color: var(--muted); }
+.what h4 { font-family: var(--display); font-size: 1.05rem; margin: 1.4rem 0 0.5rem; }
 
-.certs { list-style: none; padding: 0; margin: 0; }
-.certs li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--rule); margin: 0; }
-.certs li:last-child { border-bottom: 0; }
-.certs .name { font-weight: 600; }
+/* Certs */
+.certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.25rem; }
+.cert { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.4rem; }
+.cert strong { display: block; font-family: var(--display); font-size: 1.7rem; line-height: 1.2; color: var(--accent); }
+.cert span { display: block; margin-top: 0.4rem; color: var(--muted); font-size: 1.02rem; line-height: 1.45; }
+.edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.edu p { margin: 0; }
 
-footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
+/* Contact */
+.contact { background: var(--navy); color: #eef4fb; text-align: left; border-top: 0; }
+.contact h2 { color: #fff; }
+.contact p { color: #c9d8ea; max-width: 38rem; font-size: 1.3rem; }
+.contact a:not(.btn) { color: var(--mint); }
+footer { background: var(--navy); color: #9db3cc; padding: 0 0 2.5rem; font-size: 1rem; }
 
-@media (max-width: 40rem) {
-  header.hero { padding-top: 3rem; }
+@media (max-width: 52rem) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 2rem; }
   .job { grid-template-columns: 1fr; }
-  .when { padding: 0 0 0.5rem 1.5rem; }
+  .when { padding: 0 0 0.6rem 2rem; }
+  section { padding: 3.25rem 0; }
 }
 </style>
 </head>
@@ -141,159 +170,167 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
 
 <header class="hero">
   <div class="wrap">
-    <h1>Md Nawshad Chowdhury</h1>
-    <p class="role">IT infrastructure and systems professional in Gazipur, Bangladesh</p>
-    <p class="lede">I run the servers, networks and backups that keep a manufacturing business online. Over 12 years I have gone from help-desk engineer to leading IT infrastructure, security and buyer audits for a garments exporter.</p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:nawshad.diu@gmail.com">Email me</a>
-      <a class="btn" href="https://www.linkedin.com/in/md-nawshad-chowdhury-03b6a7163" rel="me noopener">LinkedIn profile</a>
+    <nav class="nav" aria-label="Main">
+      <a class="mark" href="#top">Nawshad Chowdhury</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-grid" id="top">
+      <div>
+        <h1>Md Nawshad Chowdhury</h1>
+        <p class="pitch">I keep the servers, networks and security behind a garments exporter running, and I build the backups that protect it when something fails.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:nawshad.diu@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/md-nawshad-chowdhury-03b6a7163" rel="me noopener">LinkedIn profile</a>
+        </div>
+      </div>
+      <aside class="board" aria-label="Career at a glance">
+        <p class="board-head"><span class="dot" aria-hidden="true"></span>IT infrastructure, at a glance</p>
+        <dl>
+          <div class="row"><dt>Experience</dt><dd>12+ years</dd></div>
+          <div class="row"><dt>Network downtime</dt><dd>cut by 99%</dd></div>
+          <div class="row"><dt>CCTV backup coverage</dt><dd>100%</dd></div>
+          <div class="row"><dt>Certified</dt><dd>RHCE · RHCSA · CCNA</dd></div>
+        </dl>
+        <p class="board-foot">Now: Assistant Manager, Columbia Apparels Ltd.</p>
+      </aside>
     </div>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
   <section id="about">
-    <h2>About</h2>
-    <p>I manage Windows and Linux servers, LAN/WAN/WLAN networks, Active Directory, firewalls, backup and disaster recovery, and CCTV for a large apparel manufacturer. I hold RHCE, RHCSA and CCNA certifications.</p>
-    <p>Alongside the technical work, I coordinate vendors, run IT projects, supervise support staff, and prepare IT systems for compliance audits from international buyers. I am looking to take on an IT manager role with wider responsibility for infrastructure, cybersecurity and strategy.</p>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-
-    <div class="job">
-      <div class="when">Oct 2018 – present</div>
-      <div class="what">
-        <h3>Columbia Apparels Ltd. (M&amp;J Group)</h3>
-        <p class="roles">Assistant Manager since Jul 2021. Senior Executive, Oct 2018 – Jun 2021.</p>
-        <ul>
-          <li>Administer domain servers, storage, file sharing and user security, including access control through Active Directory.</li>
-          <li>Manage LAN, WAN and WLAN networks, and plan and carry out hardware and software upgrades.</li>
-          <li>Run IT security: antivirus, spam control, patching and vulnerability assessments.</li>
-          <li>Maintain backup and disaster recovery systems, and oversee corporate CCTV and voice networks.</li>
-          <li>Coordinate IT projects with advisors, contractors and software vendors.</li>
-          <li>Supervise an IT support staff member and resolve user issues.</li>
-          <li>Prepare IT systems for buyer compliance and audits, including Target (USA), Zara, GU, Kontoor, RFID and C-TPAT.</li>
-        </ul>
-        <h4>Results</h4>
-        <ul>
-          <li>Cut network downtime by 99% through proactive monitoring, preventive maintenance and infrastructure optimization.</li>
-          <li>Reached 100% CCTV backup coverage, keeping surveillance uninterrupted and audit-ready.</li>
-          <li>Delivered infrastructure projects on time with minimal disruption to operations.</li>
-          <li>Passed buyer compliance audits by meeting their IT requirements.</li>
-          <li>Strengthened cybersecurity with regular security audits and up-to-date antivirus and spam protection.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">Oct 2016 – Oct 2018</div>
-      <div class="what">
-        <h3>Executive, System &amp; Services</h3>
-        <p class="roles">SOLVERS</p>
-        <ul>
-          <li>Designed, installed and configured servers, network devices and firewalls for internal and client environments.</li>
-          <li>Monitored and tuned network performance, and managed user accounts, permissions and access controls.</li>
-          <li>Ran database backups and recovery processes to protect data integrity.</li>
-          <li>Maintained company websites, email marketing campaigns and database reporting.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">Jul 2015 – Oct 2016</div>
-      <div class="what">
-        <h3>Support Engineer</h3>
-        <p class="roles">Doze Internet (SSD-Tech)</p>
-        <ul>
-          <li>Installed, configured and troubleshot LAN, MAN, WAN and SOHO networks for internet customers.</li>
-          <li>Resolved support tickets in OTRS and maintained routers, switches, hubs and servers.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">Aug 2014 – Jun 2015</div>
-      <div class="what">
-        <h3>Support Engineer (part-time)</h3>
-        <p class="roles">Optimum Solution &amp; Services</p>
-        <ul>
-          <li>Kept network uptime above 99% through technical support and troubleshooting.</li>
-          <li>Designed and optimized office networks for better connectivity and performance.</li>
-        </ul>
-      </div>
+    <div class="wrap about">
+      <h2>About me</h2>
+      <p class="big">I started in network support in 2014 and now run IT infrastructure for a large apparel manufacturer in Gazipur.</p>
+      <p>My day-to-day covers Windows and Linux servers, Active Directory, LAN/WAN/WLAN networks, firewalls, backup and disaster recovery, and CCTV. I also manage vendors and projects, supervise support staff, and prepare our IT systems for audits by international buyers.</p>
+      <p>I enjoy work where infrastructure, security and people meet, and I am steadily growing into IT management.</p>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill-group">
-        <h3>Servers and systems</h3>
-        <ul>
-          <li>Linux (Red Hat)</li>
-          <li>Windows Server</li>
-          <li>Active Directory</li>
-          <li>Backup and disaster recovery</li>
-          <li>VMware vSphere (in progress)</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Networking</h3>
-        <ul>
-          <li>LAN, WAN and WLAN</li>
-          <li>Cisco routing and switching</li>
-          <li>Firewall administration</li>
-          <li>Network monitoring and troubleshooting</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Security and compliance</h3>
-        <ul>
-          <li>Vulnerability management</li>
-          <li>Patching, antivirus and spam control</li>
-          <li>CCTV systems</li>
-          <li>IT audits and buyer compliance</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Leadership</h3>
-        <ul>
-          <li>IT project management</li>
-          <li>Vendor coordination</li>
-          <li>Team supervision</li>
-          <li>IT service delivery and support</li>
-        </ul>
+    <div class="wrap">
+      <h2>What I work with</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Servers and systems</h3>
+          <p>Windows Server, Linux (Red Hat), Active Directory, backup and disaster recovery, and VMware vSphere (in progress).</p>
+        </div>
+        <div class="card">
+          <h3>Networking</h3>
+          <p>LAN, WAN and WLAN design and upkeep, Cisco routing and switching, firewall administration and monitoring.</p>
+        </div>
+        <div class="card">
+          <h3>Security and compliance</h3>
+          <p>Patching, antivirus, vulnerability checks, CCTV, and IT audits for buyers such as Target, Zara, GU and Kontoor.</p>
+        </div>
+        <div class="card">
+          <h3>Leadership</h3>
+          <p>Project delivery, vendor coordination, supervising support staff, and keeping IT service steady for every user.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul class="certs">
-      <li><span class="name">Red Hat Certified Engineer (RHCE)</span><span class="muted">Red Hat, 2022</span></li>
-      <li><span class="name">Red Hat Certified System Administrator (RHCSA)</span><span class="muted">Red Hat, 2021</span></li>
-      <li><span class="name">CCNA, Routing and Switching</span><span class="muted">Cisco, 2021</span></li>
-      <li><span class="name">VMware vSphere 8.0: Install, Configure, Manage</span><span class="muted">In progress</span></li>
-    </ul>
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="when">Oct 2018 – present</div>
+        <div class="what">
+          <h3>Columbia Apparels Ltd. (M&amp;J Group)</h3>
+          <p class="roles">Assistant Manager since Jul 2021. Senior Executive, Oct 2018 – Jun 2021.</p>
+          <ul>
+            <li>Administer domain servers, storage, file sharing and user access through Active Directory.</li>
+            <li>Manage LAN, WAN and WLAN networks, and plan and carry out hardware and software upgrades.</li>
+            <li>Run IT security: antivirus, spam control, patching and vulnerability assessments.</li>
+            <li>Maintain backup and disaster recovery systems, and oversee CCTV and voice networks.</li>
+            <li>Coordinate projects with advisors, contractors and software vendors, and supervise an IT support staff member.</li>
+            <li>Prepare IT systems for buyer audits, including Target (USA), Zara, GU, Kontoor, RFID and C-TPAT.</li>
+          </ul>
+          <h4>Results</h4>
+          <ul>
+            <li>Cut network downtime by 99% through proactive monitoring and preventive maintenance.</li>
+            <li>Reached 100% CCTV backup coverage, keeping surveillance uninterrupted and audit-ready.</li>
+            <li>Delivered infrastructure projects on time with minimal disruption to operations.</li>
+            <li>Strengthened cybersecurity with regular security audits and up-to-date antivirus and spam protection.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Oct 2016 – Oct 2018</div>
+        <div class="what">
+          <h3>Executive, System &amp; Services</h3>
+          <p class="roles">SOLVERS</p>
+          <ul>
+            <li>Designed, installed and configured servers, network devices and firewalls for internal and client environments.</li>
+            <li>Monitored network performance, managed user accounts and access controls, and ran database backups and recovery.</li>
+            <li>Maintained company websites, email marketing campaigns and database reporting.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Jul 2015 – Oct 2016</div>
+        <div class="what">
+          <h3>Support Engineer</h3>
+          <p class="roles">Doze Internet (SSD-Tech)</p>
+          <ul>
+            <li>Installed and troubleshot LAN, MAN, WAN and SOHO networks, and maintained routers, switches and servers.</li>
+            <li>Resolved customer issues through OTRS tickets, minimizing service downtime.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Aug 2014 – Jun 2015</div>
+        <div class="what">
+          <h3>Support Engineer (part-time)</h3>
+          <p class="roles">Optimum Solution &amp; Services</p>
+          <ul>
+            <li>Kept network uptime above 99% and designed office networks for better connectivity and performance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>B.Sc. in Computer Science &amp; Engineering</strong><br>
-      <span class="muted">Daffodil International University, 2015. CGPA 3.63 out of 4.</span></p>
-    <p><strong>Diploma in Computer Science</strong><br>
-      <span class="muted">Naogaon Polytechnic Institute, 2011. GPA 3.53 out of 5.</span></p>
-    <p class="muted">Languages: Bengali and English, both fluent.</p>
+  <section id="credentials">
+    <div class="wrap">
+      <h2>Certifications and education</h2>
+      <div class="certs">
+        <div class="cert"><strong>RHCE</strong><span>Red Hat Certified Engineer, 2022</span></div>
+        <div class="cert"><strong>RHCSA</strong><span>Red Hat Certified System Administrator, 2021</span></div>
+        <div class="cert"><strong>CCNA</strong><span>Cisco, Routing and Switching, 2021</span></div>
+        <div class="cert"><strong>VMware vSphere 8.0</strong><span>Install, Configure, Manage (in progress)</span></div>
+      </div>
+      <div class="edu">
+        <p><strong>B.Sc. in Computer Science &amp; Engineering</strong><br>
+          <span class="muted">Daffodil International University, 2015. CGPA 3.63 out of 4.</span></p>
+        <p><strong>Diploma in Computer Science</strong><br>
+          <span class="muted">Naogaon Polytechnic Institute, 2011. GPA 3.53 out of 5.</span></p>
+        <p><strong>Languages</strong><br>
+          <span class="muted">Bengali and English, both fluent.</span></p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>For IT infrastructure roles, consulting or a conversation about systems and security, write to me by email or message me on LinkedIn.</p>
-    <p><a href="mailto:nawshad.diu@gmail.com">nawshad.diu@gmail.com</a><br>
-      <a href="https://www.linkedin.com/in/md-nawshad-chowdhury-03b6a7163" rel="me noopener">linkedin.com/in/md-nawshad-chowdhury-03b6a7163</a><br>
-      <span class="muted">Gazipur, Bangladesh</span></p>
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let’s talk about your infrastructure</h2>
+      <p>For IT roles, consulting, or a conversation about systems and security, write to me or message me on LinkedIn. I am based in Gazipur, Bangladesh.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:nawshad.diu@gmail.com">nawshad.diu@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/md-nawshad-chowdhury-03b6a7163" rel="me noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
   </section>
 
 </main>
