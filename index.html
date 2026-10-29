@@ -11,7 +11,7 @@
 <meta name="author" content="Md Nawshad Chowdhury">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,7 +23,7 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Gazipur", "addressCountry": "BD" },
   "email": "mailto:nawshad.diu@gmail.com",
   "knowsAbout": ["IT infrastructure", "Linux administration", "Windows Server", "Network administration", "Cybersecurity", "Disaster recovery"],
-  "sameAs": ["https://www.linkedin.com/in/md-nawshad-chowdhury-03b6a7163"]
+  "sameAs": ["https://www.linkedin.com/in/md-nawshad-chowdhury-03b6a7163", "https://medium.com/@nawshadchowdhury"]
 }
 </script>
 <style>
@@ -40,16 +40,6 @@
   --ok: #22c55e;
   --display: "Sora", "Segoe UI", system-ui, sans-serif;
   --body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1420;
-    --surface: #121e2d;
-    --ink: #e6edf5;
-    --muted: #9db0c4;
-    --rule: #22344a;
-    --accent: #5eead4;
-  }
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -167,6 +157,22 @@ footer { background: var(--navy); color: #9db3cc; padding: 0 0 2.5rem; font-size
   .when { padding: 0 0 0.6rem 2rem; }
   section { padding: 3.25rem 0; }
 }
+
+/* Sample 1: classic light */
+:root{--navy:#0f2547;--bg:#eef2f7;--ink:#14213d;--muted:#51607a;--rule:#d5dce8;--accent:#1e40af;
+--display:"Fraunces",Georgia,"Times New Roman",serif;}
+.hero{background:#fff;color:var(--ink);border-bottom:1px solid var(--rule)}
+.mark,h1{color:var(--navy)} h1{font-weight:600;letter-spacing:-.02em}
+.nav ul a{color:var(--muted)} .nav ul a:hover{color:var(--navy)}
+.pitch{color:var(--muted)}
+.photo{width:170px;height:170px;border:0;border-radius:24px;box-shadow:0 12px 30px rgba(15,37,71,.2)}
+.btn{border-color:var(--accent);color:var(--accent)} .btn.primary{background:var(--accent);color:#fff}
+.board{background:#f6f8fc;border:1px solid var(--rule);backdrop-filter:none;box-shadow:0 14px 34px rgba(15,37,71,.09)}
+.board-head{color:var(--navy);border-bottom-color:var(--rule)} .row{border-bottom-color:var(--rule)}
+.row dt,.board-foot{color:var(--muted)} .row dd{color:var(--navy)}
+.contact .btn{border-color:#fff;color:#fff} .contact .btn.primary{background:#fff;color:var(--navy)}
+.contact a:not(.btn){color:#fff}
+
 </style>
 </head>
 <body>
@@ -329,10 +335,11 @@ footer { background: var(--navy); color: #9db3cc; padding: 0 0 2.5rem; font-size
   <section id="contact" class="contact">
     <div class="wrap">
       <h2>Let’s talk about your infrastructure</h2>
-      <p>For IT roles, consulting, or a conversation about systems and security, write to me or message me on LinkedIn. I am based in Gazipur, Bangladesh.</p>
+      <p>For IT roles, consulting, or a conversation about systems and security, write to me, message me on LinkedIn, or read my writing on Medium. I am based in Gazipur, Bangladesh.</p>
       <div class="actions">
         <a class="btn primary" href="mailto:nawshad.diu@gmail.com">nawshad.diu@gmail.com</a>
         <a class="btn" href="https://www.linkedin.com/in/md-nawshad-chowdhury-03b6a7163" rel="me noopener">Connect on LinkedIn</a>
+        <a class="btn" href="https://medium.com/@nawshadchowdhury" rel="me noopener">Read on Medium</a>
       </div>
     </div>
   </section>
